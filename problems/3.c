@@ -143,7 +143,7 @@ int main(void)
   // square root of the highest factor.
   // The alternative is to build an array of primes up to the highest factor, as
   // that would allow us to do a lookup instead of multiple divisions, however
-  // that would also increase the memory requirements for the array by a factor
+  // that would also increase the memory requirements for the array by an order
   // of highest_factor (which could be >1m).
   uint32_t highest_factor = GPOINTER_TO_UINT(g_slist_last(factors)->data);
   uint32_t max_prime_candidate = floor(sqrt(highest_factor));
