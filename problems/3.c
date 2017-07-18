@@ -114,8 +114,10 @@ int main(void)
       factors = g_slist_append(factors, GUINT_TO_POINTER(other_factor));
 
       // Because we check candidate factors from the lowest value, the other
-      // factor is now the highest possible factor
-      highest_possible_factor = other_factor;
+      // factor is potentially the highest possible factor
+      if (highest_possible_factor > other_factor) {
+        highest_possible_factor = other_factor;
+      }
     }
   }
 
