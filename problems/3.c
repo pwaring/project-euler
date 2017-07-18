@@ -57,7 +57,7 @@ GSList* prime_numbers(uint32_t max_prime_candidate)
     current_prime = next_prime;
   }
 
-  // Create an 'array' to return to the caller as a pointer to a block of memory
+  // Create a linked list to return to the caller
   GSList* primes = NULL;
 
   for (uint32_t i = FIRST_PRIME; i <= max_prime_candidate; i++)
