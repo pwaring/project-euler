@@ -7,9 +7,9 @@ int main(void)
 {
   uint32_t largest_palindrome = 0;
 
-  for (uint16_t alpha = 999; alpha >= 100 && !largest_palindrome; alpha--)
+  for (uint16_t alpha = 999; alpha >= 100; alpha--)
   {
-    for (uint16_t beta = 999; beta >= 100 && !largest_palindrome; beta--)
+    for (uint16_t beta = 999; beta >= 100; beta--)
     {
       uint32_t product = alpha * beta;
       uint8_t digit_count = product < 100000 ? 5 : 6;
@@ -41,7 +41,10 @@ int main(void)
 
       if (is_palindrome)
       {
-        largest_palindrome = product;
+        if (product > largest_palindrome)
+        {
+          largest_palindrome = product;
+        }
       }
     }
   }
