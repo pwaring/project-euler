@@ -10,5 +10,8 @@ CC=clang
 7: 7.c primes.h
 	$(CC) $(CFLAGS) -o $@ $< -lm $(shell pkg-config --cflags --libs glib-2.0)
 
+10: 10.c primes.h
+	$(CC) $(CFLAGS) -o $@ $< $(shell pkg-config --cflags --libs glib-2.0)
+
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
