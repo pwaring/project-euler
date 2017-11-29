@@ -1,11 +1,11 @@
 # Project Euler
 
-An attempt to solve all Project Euler challenges in C, partly for fun and also
-as a way of re-learning the language.
+An attempt to solve all Project Euler challenges, partly for fun and also
+as a way of (re)-learning various languages.
 
 These are not necessarily the most efficient, elegant or robust solutions.
 
-C99 is assumed and all solutions have been compiled with at least:
+For C solutions, C99 is assumed and all solutions have been compiled with at least:
 
 ```
 clang -Wall -Wextra -Werrors ${EX_NUM}.c -o ${EX_NUM}
