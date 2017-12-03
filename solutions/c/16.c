@@ -19,7 +19,6 @@ int main(void)
   char *result_string = mpz_get_str(NULL, 10, result);
 
   uint32_t result_length = strlen(result_string);
-
   uint32_t result_sum = 0;
 
   for (uint32_t i = 0; i < result_length; i++)
