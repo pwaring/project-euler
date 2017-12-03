@@ -19,5 +19,8 @@ CC=clang
 16: 16.c convert.h
 	$(CC) $(CFLAGS) -o $@ $< -lgmp
 
+20: 20.c convert.h
+	$(CC) $(CFLAGS) -o $@ $< -lgmp
+
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
