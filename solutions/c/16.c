@@ -4,6 +4,8 @@
 #include <inttypes.h>
 #include <gmp.h>
 
+#include "convert.h"
+
 int main(void)
 {
   mpz_t result;
@@ -18,19 +20,7 @@ int main(void)
 
   char *result_string = mpz_get_str(NULL, 10, result);
 
-  uint32_t result_length = strlen(result_string);
-  uint32_t result_sum = 0;
-
-  for (uint32_t i = 0; i < result_length; i++)
-  {
-    char current_char = result_string[i];
-
-    if (current_char >= '0' && current_char <= '9')
-    {
-      // Hacky solution, assumes 0-9 are sequential in character set
-      result_sum += (current_char - '0');
-    }
-  }
+  uint32_t result_sum = sum_str_digits(result_string);
 
   printf("Sum of the digits in %lu^%lu = %" PRIu32 "\n", base, exponent, result_sum);
 
