@@ -16,5 +16,8 @@ CC=clang
 11: 11.c
 	$(CC) $(CFLAGS) -o $@ $< -lm
 
+16: 16.c
+	$(CC) $(CFLAGS) -o $@ $< -lgmp
+
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
