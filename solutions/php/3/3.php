@@ -10,7 +10,7 @@ define('FIRST_PRIME', 2);
 
 define('FACTORISE_TARGET', 600851475143);
 
-function prime_numbers(int $max_prime_candidate): array
+function prime_numbers(int $max_prime_candidate) : array
 {
     $sieve = array_fill(0, $max_prime_candidate + 1, SIEVE_UNKNOWN);
     $primes = [];
