@@ -10,9 +10,10 @@ define('FIRST_PRIME', 2);
 
 define('FACTORISE_TARGET', 600851475143);
 
-function prime_numbers($max_prime_candidate)
+function prime_numbers(int $max_prime_candidate): array
 {
-    $sieve = array_fill(0, $max_prime_candidate, SIEVE_UNKNOWN);
+    $sieve = array_fill(0, $max_prime_candidate + 1, SIEVE_UNKNOWN);
+    $primes = [];
 
     $sieve[FIRST_PRIME] = SIEVE_PRIME;
     $current_prime = FIRST_PRIME;
@@ -46,7 +47,15 @@ function prime_numbers($max_prime_candidate)
         $current_prime = $next_prime;
     }
 
-    return $sieve;
+    for ($s = FIRST_PRIME; $s <= $max_prime_candidate; $s++)
+    {
+        if ($sieve[$s] === SIEVE_PRIME)
+        {
+            $primes[] = $s;
+        }
+    }
+
+    return $primes;
 }
 
 // Highest possible factor at the start is the square root of the target
@@ -105,8 +114,6 @@ for ($i = 0; $i < $factors_count; $i++)
     $target_factor = $factors[$i];
     $is_prime = true;
 
-    print("Checking $target_factor for primeness\n");
-
     for ($j = 0; $is_prime && $j < $primes_count && $primes[$j] < $target_factor; $j++)
     {
         if ($target_factor % $primes[$j] === 0)
@@ -120,7 +127,5 @@ for ($i = 0; $i < $factors_count; $i++)
         $highest_prime_factor = $target_factor;
     }
 }
-
-print_r($primes);
 
 print("$highest_prime_factor\n");
