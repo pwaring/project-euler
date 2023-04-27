@@ -10,8 +10,8 @@ func main() {
 	sum := 0
 	sequence := [3]int{1, 1, 2}
 
-	for ; sequence[2] <= MAX_SEQUENCE; {
-		if sequence[2] % 2 == 0 {
+	for sequence[2] <= MAX_SEQUENCE {
+		if sequence[2]%2 == 0 {
 			sum += sequence[2]
 		}
 
